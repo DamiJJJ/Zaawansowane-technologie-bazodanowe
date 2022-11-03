@@ -37,7 +37,7 @@ CREATE TABLE [dbo].[klient](
 )
 GO
 
---Tworzenie tabeli ksi˜˜ki
+--Tworzenie tabeli ksi¹¿ki
 CREATE TABLE [dbo].[ksiazki](
 	[id_ksiazki] [int] IDENTITY(1,1) NOT NULL,
 	[Gatunek] [varchar](50) NULL,
@@ -151,7 +151,7 @@ GO
 --Constrainty typu DEFAULT
 ALTER TABLE [dbo].[pracownicy]
 ADD CONSTRAINT DF_stanowisko
-DEFAULT 'M˜odszy bibliotekarz' FOR stanowisko
+DEFAULT 'M³odszy bibliotekarz' FOR stanowisko
 GO
 
 ALTER TABLE [dbo].[ksiazki]
@@ -178,13 +178,13 @@ ON [dbo].[pracownicy](Nazwisko ASC)
 INSERT INTO [dbo].[autor] (Imie, Nazwisko, Data_urodzenia) VALUES
 	('Jeff','Abbott', '19630101'),
 	('Fiodor','Abramow', '19860211'),
-	('Remigiusz','Mr˜z', '19870115'),
+	('Remigiusz','Mróz', '19870115'),
 	('Andrzej','Sapkowski', '19480621'),
 	('Adam','Mickiewicz', '17981224'),
 	('Henryk','Sienkiewicz', '18460505'),
-	('Stefan','˜eromski', '18641014'),
-	('W˜adys˜aw','Reymont', '18670507'),
-	('Boles˜aw','Prus', '19470820'),
+	('Stefan','¯eromski', '18641014'),
+	('W³adys³aw','Reymont', '18670507'),
+	('Boles³aw','Prus', '19470820'),
 	('Eliza','Orzeszkowa', '18410606');
 GO
 
@@ -192,7 +192,7 @@ INSERT INTO [dbo].[klient] (Imie, Nazwisko, Adres, PESEL) VALUES
 	('Adrian','Adacki', 'Atramentowa 6', '00271388371'),
 	('Barbara','Badacka', 'Brzozowa 12', '86052873243'),
 	('Cezary','Cadacki', 'Czerwona 9', '47082328532'),
-	('Danuta','Dadacka', 'D˜browa 456', '04292719323'),
+	('Danuta','Dadacka', 'D¹browa 456', '04292719323'),
 	('Emigiusz','Edacki', 'Elaboratowa 34', '63102168115'),
 	('Faustyna','Fadacka', 'Filharmonii 56', '55011857329'),
 	('Grzegorz','Gadacki', NULL, '79101071673'),
@@ -202,29 +202,29 @@ INSERT INTO [dbo].[klient] (Imie, Nazwisko, Adres, PESEL) VALUES
 GO
 
 INSERT INTO [dbo].pracownicy(Imie, Nazwisko, PESEL, stanowisko) VALUES
-	('Zuzanna','Zi˜kowska', '98121655263', 'M˜odszy bibliotekarz'),
-	('W˜adys˜aw','Wiosenny', '66042286316', 'Kierownik'),
-	('Konrad','Kuczy˜ski', '75082387471', 'M˜odszy bibliotekarz'),
-	('Oliwia','Owalna', '95041816745', 'Sta˜ysta'),
+	('Zuzanna','Zió³kowska', '98121655263', 'M³odszy bibliotekarz'),
+	('W³adys³aw','Wiosenny', '66042286316', 'Kierownik'),
+	('Konrad','Kuczyñski', '75082387471', 'M³odszy bibliotekarz'),
+	('Oliwia','Owalna', '95041816745', 'Sta¿ysta'),
 	('Nikodem','Nowodolski', '89062068753', 'Starszy bibliotekarz'),
-	('Mariusz','M˜', '68042091512', 'Dyrektor'),
-	('Alan','Wo˜niak', '76032034856', 'M˜odszy bibliotekarz'),
+	('Mariusz','Mó³', '68042091512', 'Dyrektor'),
+	('Alan','WoŸniak', '76032034856', 'M³odszy bibliotekarz'),
 	('Iga','Ostrowska', '89042279346', 'Bibliotekarz'),
 	('Kamila','Krawczyk', '71073043825', 'Bibliotekarz'),
-	('Rafa˜','Szyma˜ski', '01252481894', 'Sta˜ysta');
+	('Rafa³','Szymañski', '01252481894', 'Sta¿ysta');
 GO
 
 INSERT INTO [dbo].ksiazki(Gatunek, Tytul, id_autor, Rok_wydania, Opis) VALUES
-	('Fikcja','Adrenaline', 1, '2010', 'Sam Capra jest agentem operacyjnym CIA, stacjonuje w Londynie i zajmuje sie rozpracowywaniem mi˜dzynarodowych organizacji przestepczych.'),
-	('Krymina˜','The First Order', 1, '2016', NULL),
-	('Fikcja','Wied˜min - Ostatnie ˜yczenie', 4, '1993', 'zbi˜r opowiada˜ fantasy z 1993 roku, napisanych przez Andrzeja Sapkowskiego i stanowi˜cych wst˜p do cyklu o wied˜minie Geralcie.'),
+	('Fikcja','Adrenaline', 1, '2010', 'Sam Capra jest agentem operacyjnym CIA, stacjonuje w Londynie i zajmuje sie rozpracowywaniem miêdzynarodowych organizacji przestepczych.'),
+	('Krymina³','The First Order', 1, '2016', NULL),
+	('Fikcja','WiedŸmin - Ostatnie ¯yczenie', 4, '1993', 'zbiór opowiadañ fantasy z 1993 roku, napisanych przez Andrzeja Sapkowskiego i stanowi¹cych wstêp do cyklu o wiedŸminie Geralcie.'),
 	('Thriller','Kasacja', 3, '2015', 'polski thriller prawniczy autorstwa Remigiusza Mroza, wydany po raz pierwszy przez Wydawnictwo Czwarta Strona w 2015.'),
-	('Poezja Epicka','Pan Tadeusz', 5, '1834', 'Pan Tadeusz, czyli ostatni zajazd na Litwie ˜ poemat epicki Adama Mickiewicza wydany w dw˜ch tomach w 1834 w Pary˜u przez Aleksandra Je˜owickiego.'),
-	('Fikcja','Ch˜opi', 8, '1904', 'powie˜˜ spo˜eczno-obyczajowa W˜adys˜awa Stanis˜awa Reymonta publikowana w odcinkach w latach 1902˜1908 w ˜Tygodniku Ilustrowanym˜, wydana w latach 1904˜1909 w Warszawie w wydawnictwie ˜Gebethner i Wolff˜.'),
-	('Fikcja','Syzyfowe Prace', 7, '1897', 'powie˜˜ Stefana ˜eromskiego, kt˜ra po raz pierwszy ukaza˜a si˜ w krakowskim dzienniku ˜Nowa Reforma˜ od 7 lipca do 24 wrze˜nia 1897.'),
-	('Fikcja','Lalka', 9, '1889', 'powie˜˜ spo˜eczno-obyczajowa Boles˜awa Prusa publikowana w odcinkach w latach 1887˜1889 w dzienniku ˜Kurier Codzienny˜, wydana w 1890 w Warszawie w wydawnictwie ˜Gebethner i Wolff˜.'),
-	('Powie˜˜','Faraon', 9, '1895', NULL),
-	('Powie˜˜','Nad Niemnem', 10, '1888', 'spo˜eczno-obyczajowa powie˜˜ pozytywistyczna Elizy Orzeszkowej z 1888 roku. Trzytomowy utw˜r przedstawia panoram˜ polskiego spo˜ecze˜stwa drugiej po˜owy XIX wieku, nawi˜zuj˜c r˜wnie˜ do czas˜w powstania styczniowego.');
+	('Poezja Epicka','Pan Tadeusz', 5, '1834', 'Pan Tadeusz, czyli ostatni zajazd na Litwie – poemat epicki Adama Mickiewicza wydany w dwóch tomach w 1834 w Pary¿u przez Aleksandra Je³owickiego.'),
+	('Fikcja','Ch³opi', 8, '1904', 'powieœæ spo³eczno-obyczajowa W³adys³awa Stanis³awa Reymonta publikowana w odcinkach w latach 1902–1908 w „Tygodniku Ilustrowanym”, wydana w latach 1904–1909 w Warszawie w wydawnictwie „Gebethner i Wolff”.'),
+	('Fikcja','Syzyfowe Prace', 7, '1897', 'powieœæ Stefana ¯eromskiego, która po raz pierwszy ukaza³a siê w krakowskim dzienniku „Nowa Reforma” od 7 lipca do 24 wrzeœnia 1897.'),
+	('Fikcja','Lalka', 9, '1889', 'powieœæ spo³eczno-obyczajowa Boles³awa Prusa publikowana w odcinkach w latach 1887–1889 w dzienniku „Kurier Codzienny”, wydana w 1890 w Warszawie w wydawnictwie „Gebethner i Wolff”.'),
+	('Powieœæ','Faraon', 9, '1895', NULL),
+	('Powieœæ','Nad Niemnem', 10, '1888', 'spo³eczno-obyczajowa powieœæ pozytywistyczna Elizy Orzeszkowej z 1888 roku. Trzytomowy utwór przedstawia panoramê polskiego spo³eczeñstwa drugiej po³owy XIX wieku, nawi¹zuj¹c równie¿ do czasów powstania styczniowego.');
 GO
 
 INSERT INTO [dbo].wypozyczenie(id_pracownika, id_klient, id_ksiazki, data) VALUES
@@ -243,7 +243,7 @@ GO
 
 --Widok z JOIN
 CREATE VIEW [VIEW_Wypozyczone_Ksiazki] AS
-SELECT [ksiazki].Tytul 'Tytu˜ ksi˜˜ki',[autor].Imie + ' ' + [autor].Nazwisko 'Autor', [klient].PESEL 'PESEL klienta', [pracownicy].Imie + ' ' + [pracownicy].Nazwisko 'Pracownik', [wypozyczenie].data 'Data wypo˜yczenia'
+SELECT [ksiazki].Tytul 'Tytu³ ksi¹¿ki',[autor].Imie + ' ' + [autor].Nazwisko 'Autor', [klient].PESEL 'PESEL klienta', [pracownicy].Imie + ' ' + [pracownicy].Nazwisko 'Pracownik', [wypozyczenie].data 'Data wypo¿yczenia'
 FROM [biblioteka].[dbo].[wypozyczenie]
 INNER JOIN [biblioteka].[dbo].[pracownicy] ON [wypozyczenie].[id_pracownika]=[pracownicy].[id_pracownika]
 INNER JOIN [biblioteka].[dbo].[klient] ON [wypozyczenie].[id_klient]=[klient].[id_klient]
@@ -253,7 +253,7 @@ GO
 
 --Widok z GROUP BY
 CREATE VIEW [VIEW_Ilosc_ksiazek_By_Autor] AS
-SELECT COUNT([ksiazki].id_ksiazki) 'Ilo˜˜ ksi˜˜ek', [autor].Imie + ' ' + [autor].Nazwisko 'Autor'
+SELECT COUNT([ksiazki].id_ksiazki) 'Iloœæ ksi¹¿ek', [autor].Imie + ' ' + [autor].Nazwisko 'Autor'
 FROM [biblioteka].[dbo].[ksiazki]
 INNER JOIN [biblioteka].[dbo].[autor] ON [autor].[id_autor]=[ksiazki].[id_autor]
 GROUP BY [autor].Imie + ' ' + [autor].Nazwisko;
@@ -261,7 +261,7 @@ GO
 
 --Widok z OVER/PARTITION BY
 CREATE VIEW [VIEW_Ilosc_Wypozyczonych_ksiazek] AS
-SELECT DISTINCT [ksiazki].Tytul 'Tytu˜', [autor].Imie + ' ' + [autor].Nazwisko 'Autor', COUNT([ksiazki].Tytul) OVER(PARTITION BY [ksiazki].Tytul) 'Ilo˜˜ ksi˜˜ek'
+SELECT DISTINCT [ksiazki].Tytul 'Tytu³', [autor].Imie + ' ' + [autor].Nazwisko 'Autor', COUNT([ksiazki].Tytul) OVER(PARTITION BY [ksiazki].Tytul) 'Iloœæ ksi¹¿ek'
 FROM [biblioteka].[dbo].[wypozyczenie]
 INNER JOIN [biblioteka].[dbo].[ksiazki] ON [wypozyczenie].[id_ksiazki]=[ksiazki].[id_ksiazki]
 INNER JOIN [biblioteka].[dbo].[autor] ON [autor].[id_autor]=[ksiazki].[id_autor]
@@ -304,12 +304,12 @@ RETURN
 )
 GO
 
---Widok z funkcj˜ tabelaryczn˜
+--Widok z funkcj¹ tabelaryczn¹
 CREATE VIEW [VIEW_Ksiazki_Pomiedzy_Latami_1800_1900] AS
 SELECT * FROM [biblioteka].[dbo].FUNC_Get_Ksiazki_Pomiedzy_Latami(1800, 1900);
 GO
 
---Procedura sk˜adowana
+--Procedura sk³adowana
 CREATE OR ALTER PROCEDURE InsertWypozyczenie
       @id_pracownika AS INT
       ,@id_klient AS INT
@@ -351,7 +351,7 @@ SET @data = ISNULL(@data, GETDATE())
 END
 GO
 
---Wywo˜anie procedury
+--Wywo³anie procedury
 EXEC [biblioteka].[dbo].InsertWypozyczenie
       @id_pracownika = 5
       ,@id_klient = 3
